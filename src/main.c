@@ -6,5 +6,7 @@
 
 int main(int argc,char *argv[]){
     affichage();
+    (void)argc;
+    (void)argv;
     return 0;
 }
