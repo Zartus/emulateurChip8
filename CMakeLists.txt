@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.1)
 project(chip8)
-
+include(CTest)
 add_subdirectory(cpu/src)
 include_directories(cpu/include)
 include_directories(include)
@@ -14,6 +14,7 @@ if (SDL2_FOUND)
     target_link_libraries(chip8 ${SDL2_LIBRARIES})
     include_directories(${SDL2_INCLUDE_DIRS})
 else ()
-    # Sinon, nous affichons un message
     message(FATAL_ERROR "SDL2 not found")
 endif ()
+
+add_test(example_test chip8)
