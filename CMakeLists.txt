@@ -10,11 +10,10 @@ target_compile_options (chip8 PRIVATE -Wall -Werror -pedantic -Wextra)
 target_link_libraries(chip8 cpu)
 
 find_package(SDL2 REQUIRED)
+
 if (SDL2_FOUND)
     target_link_libraries(chip8 ${SDL2_LIBRARIES})
     include_directories(${SDL2_INCLUDE_DIRS})
 else ()
     message(FATAL_ERROR "SDL2 not found")
 endif ()
-
-add_test(example_test chip8)

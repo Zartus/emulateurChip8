@@ -3,11 +3,11 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
-#include "test.h"
+#include "cpu.h"
 
-int main(int argc,char *argv[]){
-    affichage();
-    (void)argc;
-    (void)argv;
+//a la fin on ne devra appeller que un .h
+int main(){
+    ptrCPU c = initialiserCpu();
+    printf("%d\n",c->PC);
     return 0;
 }
